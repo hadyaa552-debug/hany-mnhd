@@ -1,0 +1,61 @@
+import Header from "@/components/header"
+import Hero from "@/components/hero"
+import ProjectSarai from "@/components/project-sarai"
+import ProjectTalala from "@/components/project-talala"
+import ProjectTajCity from "@/components/project-tajcity"
+import ProjectButterfly from "@/components/project-butterfly"
+import AboutDeveloper from "@/components/about-developer"
+import ContactForm from "@/components/contact-form"
+import WhatsAppWidget from "@/components/whatsapp-widget"
+import MobileBottomBar from "@/components/mobile-bottom-bar"
+import Footer from "@/components/footer"
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-background">
+      <Header />
+      <Hero />
+      <ProjectSarai />
+      <ProjectTalala />
+      <ProjectTajCity />
+      <ProjectButterfly />
+      <AboutDeveloper />
+
+      <section id="contact" className="py-16 lg:py-24 bg-muted/20">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-primary font-bold tracking-widest uppercase text-sm mb-3">تواصل معنا</p>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground mb-4">نحن هنا لمساعدتك</h2>
+            <p className="text-muted-foreground text-sm">سجل اهتمامك وسيتواصل معك فريقنا في أقرب وقت</p>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="text-right space-y-4">
+              <a href="tel:+201223147238" className="text-primary text-2xl font-black hover:underline block">01223147238</a>
+              <div className="space-y-0">
+                {[
+                  { name: "سراي", loc: "القاهرة الجديدة – طريق القاهرة السويس" },
+                  { name: "تلالا", loc: "هليوبوليس الجديدة – شرق القاهرة" },
+                  { name: "تاج سيتي", loc: "القاهرة الجديدة – أمام JW Marriott" },
+                  { name: "باترفلاي", loc: "مدينة المستقبل" },
+                ].map((p, i) => (
+                  <div key={i} className="flex items-center gap-3 py-3 border-b border-border">
+                    <div>
+                      <p className="font-bold text-foreground text-sm">{p.name}</p>
+                      <p className="text-xs text-muted-foreground">{p.loc}</p>
+                    </div>
+                    <div className="w-2 h-2 bg-primary flex-shrink-0 mr-auto" />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+      <WhatsAppWidget />
+      <MobileBottomBar />
+    </main>
+  )
+}
