@@ -16,7 +16,7 @@ export default function ContactForm({ compact = false }: { compact?: boolean }) 
     e.preventDefault()
     setLoading(true)
     try {
-      const res = await fetch("https://formsubmit.co/ajax/ahany9710@gmail.com", {
+      const res = await fetch("https://formsubmit.co/ajax/hadyaa552@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
